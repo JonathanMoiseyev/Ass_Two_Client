@@ -38,7 +38,7 @@ string Client::receiveLine() const {
     char buffer[BUFFER_SIZE];
     int read_bytes = recv(sock, buffer, BUFFER_SIZE, 0);
     if (read_bytes == 0) {
-        // conection is closed
+        // connection is closed
         throw "connection is closed";
     } else if (read_bytes < 0) {
         // error

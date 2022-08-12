@@ -3,6 +3,8 @@
 #include <sstream>
 #include <string>
 #include <fstream>
+#include <string.h>
+
 using namespace std;
 
 FileClientHandler::FileClientHandler(const Client &client, ofstream &log_file) :
@@ -21,6 +23,14 @@ void FileClientHandler::sendLines(fstream &send_file) const {
     while(!line.empty()) {
         client.sendLine(line);
         string response = client.receiveLine();
-        log_file << response.c_str() << endl;
+        try {
+            log_file << response << endl;
+        } catch (const char *msg) {
+            if (strcmp(msg, "connection is closed") == 0) {
+                return;
+            } else {
+                throw "error";
+            }
+        }
     }
 }
