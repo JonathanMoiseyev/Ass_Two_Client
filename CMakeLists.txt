@@ -9,4 +9,5 @@ add_executable(Ass_Two_Client
         client.cpp
         client.h
         fileClientHandler.cpp
-        fileClientHandler.h)
+        fileClientHandler.h
+        main.cpp)

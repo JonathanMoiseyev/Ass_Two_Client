@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 
-Client::Client(const std::string server_ip, const int port): server_ip(server_ip), port(port),
+Client::Client(const std::string server_ip, const int port): server_ip(server_ip), port_num(port),
                     sock(socket(AF_INET, SOCK_STREAM, 0)){
     if (sock < 0) {
         perror("error creating socket");
