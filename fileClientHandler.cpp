@@ -32,5 +32,8 @@ void FileClientHandler::sendLines(fstream &send_file) const {
                 throw "error";
             }
         }
+        getline(send_file, line);
     }
+
+    client.sendLine("END\r");
 }
