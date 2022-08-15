@@ -17,8 +17,8 @@ int main(int argc, char *argv[]) {
     string unclassified_address = argv[1];
     string classified_address = argv[2];
 
-    fstream &send_file = *(new fstream(classified_address, ios::in));
-    ofstream &log_file = *(new ofstream(unclassified_address, ios::out));
+    fstream &send_file = *(new fstream(unclassified_address, ios::in));
+    ofstream &log_file = *(new ofstream(classified_address, ios::out));
 
     if (!send_file.is_open()) {
         cout << "Error opening file : " + classified_address << endl;
