@@ -4,6 +4,12 @@
 #include "client.h"
 #include <fstream>
 
+/**
+ * @brief The File_client_handler class
+ *
+ * This class is responsible for handling the client.
+ * It creates a client, and handles it.
+ */
 class FileClientHandler {
     private:
         const Client &client;
@@ -11,14 +17,14 @@ class FileClientHandler {
 
     public:
         /**
-         * @brief constructor
+         * Constructor
          * @param client - client object
          * @param log_file - the file to write the log to
          */
         FileClientHandler(const Client &client, ofstream &log_file);
 
         /**
-         * @brief sends lines from the file to the server
+         * Sends lines from the file to the server
          * @param send_file - the file to send
          */
         void sendLines(fstream &send_file) const;

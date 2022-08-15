@@ -1,7 +1,7 @@
 #include "client/fileClientHandler.h"
 
 /**
- * @brief main function
+ * The main function for the client.
  * @param argc - number of arguments
  * @param argv - array of arguments, that should have the address of the classified file,
  * and the address of the unclassified file
