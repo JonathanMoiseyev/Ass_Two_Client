@@ -1,8 +1,6 @@
 #include "fileClientHandler.h"
 #include <iostream>
-#include <sstream>
 #include <string>
-#include <fstream>
 #include <string.h>
 
 using namespace std;
@@ -10,13 +8,15 @@ using namespace std;
 FileClientHandler::FileClientHandler(const Client &client, ofstream &log_file) :
             client(client), log_file(log_file) {
     if (!log_file.is_open()) {
-        throw "Error: file is not open";
+        cout <<  "Error: log file is not open" << endl;
+        exit(1);
     }
 }
 
 void FileClientHandler::sendLines(fstream &send_file) const {
     if (!send_file.is_open()) {
-        throw "Error: file is not open";
+        cout << "Error: send file is not open" << endl;
+        exit(1);
     }
     string line;
     getline(send_file, line);
@@ -29,7 +29,8 @@ void FileClientHandler::sendLines(fstream &send_file) const {
             if (strcmp(msg, "connection is closed") == 0) {
                 return;
             } else {
-                throw "error";
+                cout << "error";
+                exit(1);
             }
         }
         getline(send_file, line);
