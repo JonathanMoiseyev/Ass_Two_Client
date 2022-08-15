@@ -1,14 +1,10 @@
-# Flower Classifier
+# Flower Classifier - Client
 
 ## About The Project
 
 This project is the client-side of the Flower Classifier project. 
 For further information on the project read the 
 server's README.md which contains additional information. It can be found [here](https://github.com/yuvalgrofman/Ass_Two).
-
-## The Client
-
-This part of the README.md is dedicated to the client.
 
 ## Getting Started
 
@@ -46,6 +42,8 @@ This file contains the following columns (separated by a comma):
 - sepal length - the length of the flower's sepal
 - sepal width - the width of the flower's sepal
 - petal length - the length of the flower's petal
+
+Please note, that this **csv file must end with a blank line**. Otherwise, the program will not operate properly.
 
 2. Classified.csv - an empty file.
 
