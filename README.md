@@ -24,7 +24,7 @@ Then, to run the project execute the following commands (in the terminal):
         mkdir -p build && cd build
         cmake ..
         make -j
-        ./AssTwo.out <argument 1> <argument 2>
+        ./AssTwoClient.out <argument 1> <argument 2>
 
 
 The first argument is the file path to a .csv file of unclassified flowers, 
