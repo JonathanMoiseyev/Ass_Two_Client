@@ -1,4 +1,5 @@
 #include "client/fileClientHandler.h"
+#include "iostream"
 
 /**
  * The main function for the client.
@@ -9,21 +10,24 @@
  */
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        throw "Error: not enough arguments";
+        cout << "Error: not enough arguments" << endl;
+        exit(1);
     }
 
-    string classified_address = argv[1];
-    string unclassified_address = argv[2];
+    string unclassified_address = argv[1];
+    string classified_address = argv[2];
 
-    fstream &send_file = *(new fstream(classified_address, ios::in));
-    ofstream &log_file = *(new ofstream(unclassified_address, ios::out));
+    fstream &send_file = *(new fstream(unclassified_address, ios::in));
+    ofstream &log_file = *(new ofstream(classified_address, ios::out));
 
     if (!send_file.is_open()) {
-        throw "Error opening file : " + classified_address;
+        cout << "Error opening file : " + classified_address << endl;
+        exit(1);
     }
 
     if (!log_file.is_open()) {
-        throw "Error opening file : " + unclassified_address;
+        cout << "Error opening file : " + unclassified_address << endl;
+        exit(1);
     }
 
     Client &client = *(new Client());
