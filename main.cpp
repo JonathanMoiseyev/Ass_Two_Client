@@ -12,8 +12,8 @@ int main(int argc, char *argv[]) {
         throw "Error: not enough arguments";
     }
 
-    string classified_address = argv[1];
-    string unclassified_address = argv[2];
+    string unclassified_address = argv[1];
+    string classified_address = argv[2];
 
     fstream &send_file = *(new fstream(classified_address, ios::in));
     ofstream &log_file = *(new ofstream(unclassified_address, ios::out));
