@@ -28,7 +28,7 @@ Then, to run the project execute the following commands (in the terminal):
 
 
 The first argument is the file path to a .csv file of unclassified flowers, 
-while the second argument is the file path to the output csv file which contains the predicted file paths.
+while the second argument is the file path to the output csv file which contains the predicted flower types.
 
 ### 3) Set .csv Files
 
