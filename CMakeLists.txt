@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
 
-add_executable(Ass_Two_Client
+add_executable(AssTwoClient.out
         client/client.cpp
         client/client.h
         client/fileClientHandler.cpp
