@@ -29,7 +29,7 @@ void Client::sendLine(const std::string line) const {
     int sent_bytes = send(sock, data_addr, data_len, 0);
 
     if (sent_bytes < 0) {
-        // error
+        perror("error sending data");
     }
 }
 
@@ -37,10 +37,8 @@ string Client::receiveLine() const {
     char buffer[BUFFER_SIZE];
     int read_bytes = recv(sock, buffer, BUFFER_SIZE, 0);
     if (read_bytes == 0) {
-        // connection is closed
         throw "connection is closed";
     } else if (read_bytes < 0) {
-        // error
         throw "error";
     }
     return string(buffer);
